@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Controle Financeiro</h1>
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#controle">Controle de Despesas</a>
+            <a href="#relatorio">Relatórios</a>
+        </nav>
+    </header>
+
+    <section id="dashboard">
+        <h2>Resumo Financeiro</h2>
+        <div id="resumo">
+            <p><strong>Lucro Total: </strong>R$ <span id="lucroTotal">0,00</span></p>
+            <p><strong>Prejuízo Total: </strong>R$ <span id="prejuizoTotal">0,00</span></p>
+        </div>
+    </section>
+
+    <section id="controle">
+        <h2>Controle de Despesas e Receitas</h2>
+        <form id="formControle">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" required>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" required>
+
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" step="0.01" required>
+
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+    <section id="relatorio">
+        <h2>Gerar Relatório</h2>
+        <form id="filtroPeriodo">
+            <label for="dataInicio">Início:</label>
+            <input type="date" id="dataInicio">
+
+            <label for="dataFim">Fim:</label>
+            <input type="date" id="dataFim">
+
+            <button type="button" id="gerarRelatorio">Gerar Relatório</button>
+        </form>
+        <button id="downloadPdf" style="display: none;">Baixar Relatório em PDF</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
